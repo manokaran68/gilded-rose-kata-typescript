@@ -15,15 +15,23 @@ class Item {
   legendary: boolean = false;
   qualityOnExpiry?: number;
 
-  constructor(
-    name: string,
-    sellIn: number,
-    quality: number,
-    qualityStep?: number | qualityStepObject,
-    appreciateOnAging?: boolean,
-    legendary?: boolean,
-    qualityOnExpiry?: number
-  ) {
+  constructor({
+    name,
+    sellIn,
+    quality,
+    qualityStep,
+    appreciateOnAging,
+    legendary,
+    qualityOnExpiry,
+  }: {
+    name: string;
+    sellIn: number;
+    quality: number;
+    qualityStep?: number | qualityStepObject;
+    appreciateOnAging?: boolean;
+    legendary?: boolean;
+    qualityOnExpiry?: number;
+  }) {
     this.name = name;
     this.sellIn = sellIn;
     this.quality = quality;
@@ -37,7 +45,7 @@ class Item {
       this.legendary = legendary;
     }
     if (qualityOnExpiry !== undefined) {
-        this.qualityOnExpiry = qualityOnExpiry;
+      this.qualityOnExpiry = qualityOnExpiry;
     }
   }
 
